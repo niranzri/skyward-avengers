@@ -4,8 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    /*background-color: rgb(238,224,174);
-    background: radial-gradient(circle, rgba(238,224,174,1) 0%, rgba(148,173,233,1) 100%);*/
     box-sizing: border-box;
     line-height: 1.7;
     font-size: 20px;
@@ -20,35 +18,29 @@ body {
 }
 
 .game-screen {
-    padding-top:10%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.title {
+.top-container {
     font-family: 'Big Shoulders Stencil Display', sans-serif;
+    padding-top: 10%;
     font-size: 6rem;
     color: black;
     height: 50vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-container {
     height: 25vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-img {
-    position:relative;
-    height:80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-button {
@@ -58,11 +50,17 @@ img {
     text-align:center;
     font-size: 3rem;
     font-family: 'Saira Semi Condensed', sans-serif;
-    Padding:40px;
+    Padding: 40px;
     background-color: transparent; 
-    border:none;
-    display:flex;
+    border: none;
+    display: flex;
 }
+
+img {
+    position: relative;
+    height: 80%;
+}
+
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
@@ -72,9 +70,9 @@ h1 {
 }
 
 .game-instructions {
-    display:none;
-    padding: 10%;
+    padding: 5%;
     text-align:justify;
+    display:block;
 }
 
 .game-instructions ul {
@@ -86,9 +84,31 @@ h1 {
     font-weight:bold;
 }
 
+.main-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.factory-button {
+    cursor: pointer;
+    margin: 55% 0 0 0;
+    position: absolute;
+    text-align:center;
+    font-size: 1.5rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    Padding: 40px;
+    background-color: transparent; 
+    border: none;
+    display: flex;
+    line-height: 1;
+}
+
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
-.main-screen, .end-screen {
+.end-screen {
     display:none;
 }
 
