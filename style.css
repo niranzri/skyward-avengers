@@ -1,5 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    background-color:antiquewhite;
+    /*background-color: rgb(238,224,174);
+    background: radial-gradient(circle, rgba(238,224,174,1) 0%, rgba(148,173,233,1) 100%);*/
+    box-sizing: border-box;
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+body {
+    height:100vh;
+    background-color: rgb(238,224,174);
+    background: radial-gradient(circle, rgba(238,224,174,1) 0%, rgba(148,173,233,1) 100%);
+    font-family: sans-serif;
+
+}
+
+.game-screen {
+    padding-top:10%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.title {
+    font-family: 'Big Shoulders Stencil Display', sans-serif;
+    font-size: 6rem;
+    color: black;
+    height: 50vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.button-container {
+    height: 25vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+img {
+    position:relative;
+    height:80%;
+}
+
+.main-button {
+    cursor: pointer;
+    margin: 15px 60px 0 0;
+    position: absolute;
+    text-align:center;
+    font-size: 3rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    Padding:40px;
+    background-color: transparent; 
+    border:none;
+    display:flex;
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+h1 {
+    font-family: 'Big Shoulders Stencil Display', sans-serif;
+    font-size: 2.5rem;
+}
+
+.game-instructions {
+    display:none;
+    padding: 10%;
+    text-align:justify;
+}
+
+.game-instructions ul {
+    position:relative;
+    margin: 0 3% 0 3%;
+}
+
+.game-instructions ul li span {
+    font-weight:bold;
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+.main-screen, .end-screen {
+    display:none;
+}
+
+@media(max-width:768px) {
+    .game-screen > p {
+        font-size: 3rem;
+    }
+
+    .main-button {
+        font-size: 1rem;
+    }
+
+    img {
+        position:absolute;
+        height:80px;
+        margin: 15px 30px 0 0;
+    }
 }
