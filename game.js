@@ -20,11 +20,6 @@ class CloudGame {
         } 
     }
 
-    // gets images 
-    getImages() {
-        return this.images;
-    }
-
     // checks if answer correct & upadtes score
     checkIfCorrect(buttonId, image) {
         const guessedImage = document.querySelector(".js-images-guessed");
