@@ -67,7 +67,7 @@ let currentImageIndex = 0;
 factoryButton.addEventListener('click', () => {
     if (currentImageIndex >= randomizedImages.length) {
         currentImageIndex = 0;
-        return;
+        return; // remove event listener and move to final screen
     } 
     gameImage.src = `images/${images[currentImageIndex].img}`;
     currentImageIndex += 1;
