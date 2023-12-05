@@ -129,10 +129,23 @@ h1 {
 
 .row-2 {
     height: 45vh;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.game-image {
+    height: 90%;
+    padding:3%;
+    margin: 0 0 0 8%;
+}
+
+.game-text{
+    position: relative;
+    width: 40%;
+    padding: 5%;
+}
+
 
 .row-3 {
     height: 25vh;
@@ -161,32 +174,32 @@ h1 {
 
 .factory-button span {
     font-size: 1.5rem;
-    line-height:1;
+    line-height: 1;
     margin-top: 100px;
 }
 
 
 #factory-img {
     position: relative;
-    height:90%;
+    height: 90%;
 }
 
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
 
-@media(max-width:768px) {
+@media(max-width:1024px) {
     .top-container {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .cloud-button {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     #cloud-img {
         position:absolute;
-        height:80px;
+        height:100px;
         margin: 15px 30px 0 0;
     }
 
@@ -205,12 +218,25 @@ h1 {
         font-size: 0.9rem;
         height: 25%;
     }
+
     .row-2 {
         height: 35vh;
+        min-height: 35vh;
     }
 
     .factory-button span {
         font-size:1.2rem;
         margin-top: 60px;
+    }
+
+    .game-image {
+        margin:0;
+        height: 70%;
+        min-width: 200px;
+        min-height: 150px;
+    }
+
+    .game-text {
+        display:none;
     }
 }

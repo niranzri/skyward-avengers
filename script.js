@@ -12,15 +12,20 @@ const images = [
 ];
 
 // Create instance of class CloudGame
-
 const cloudGame = new CloudGame(images);
-cloudGame.shuffleImages(cloudGame.cards);
 
-// First and second screens
+// Randomize images
+const randomizedImages = cloudGame.randomizeImages();
+
+// Start & Instructions screens
 const gameScreen = document.querySelector(".js-game-screen");
-const mainScreen = document.querySelector(".js-main-screen");
 let topContainer = document.querySelector(".top-container"); 
-let mainButton = document.querySelector(".cloud-button");
+const cloudButton = document.querySelector(".cloud-button");
+
+// Game screen
+const mainScreen = document.querySelector(".js-main-screen");
+const factoryButton = document.querySelector(".factory-button");
+const gameImage = document.querySelector(".game-image");
 
 function firstClick () {
     topContainer.innerHTML = `<h1>Do you want to become a skyward avenger?</h1>
@@ -44,17 +49,30 @@ function firstClick () {
     <p>You will be shown 10 pictures of clouds, one at a time. To earn points, click the correct answer. <em>May the force be with you!</em></p>`;
     topContainer.classList.remove("top-container");
     topContainer.classList.add("game-instructions");
-    mainButton.innerHTML = "NEXT";
-    mainButton.removeEventListener('click', firstClick);
-    mainButton.addEventListener('click', secondClick);
+    cloudButton.innerHTML = "NEXT";
+    cloudButton.removeEventListener('click', firstClick);
+    cloudButton.addEventListener('click', secondClick);
 };
 
 function secondClick () {
     gameScreen.style.display = 'none';
     mainScreen.style.display = 'block';
-    mainButton.removeEventListener('click', secondClick);
+    cloudButton.removeEventListener('click', secondClick);
 }
 
-mainButton.addEventListener('click', firstClick);
+
+cloudButton.addEventListener('click', firstClick);
+
+let currentImageIndex = 0;
+factoryButton.addEventListener('click', () => {
+    if (currentImageIndex >= randomizedImages.length) {
+        currentImageIndex = 0;
+        return;
+    } 
+    gameImage.src = `images/${images[currentImageIndex].img}`;
+    currentImageIndex += 1;
+    });
+
+
 
 
