@@ -15,26 +15,41 @@
     </head>
 
     <body>
-        <div class="game-screen">
+        <div class="game-screen js-game-screen">
             <p class="top-container">Skyward Avengers</p>
             <div class="button-container">
-                <img src="images/gameButton.png">
-                <button type="button" class="main-button"> START </button>
+                <img src="images/gameButton.png" id="cloud-img">
+                <button type="button" class="cloud-button"> START </button>
             </div>
         </div>
 
-        <div class="main-screen">
-            <p class="top-container">Main screen</p>
-            <div class="button-container">
-                <img src="images/cloudFactory.png">
-                <button type="button" class="factory-button"> NEXT CLOUD </button>
+        <div class="js-main-screen">
+            <div class="row-0"> 
+                <span>Score:                 
+                    <span id="js-images-guessed"> 0 </span> 
+                    <span>/</span>
+                    <span id="js-images-played"> 0 </span>
+                <span> 
+            </div>
+            <div class="row-1">
+                <button type="button" class="game-button"> Low-level </button>
+                <button type="button" class="game-button"> Medium-level </button>
+                <button type="button" class="game-button"> High-level </button>
+            </div>
+            <div class="row-2"> Image + text</div>
+
+            <div class="row-3">
+                <!--<div></div>-->
+                <!--<img src="images/cloudFactory.png" id="factory-img">-->
+                <button type="button" class="factory-button"> <span>NEXT <br> CLOUD </span> </button>
             </div>
         </div>
 
-        <div class="end-screen">
+        <div class="js-end-screen">
             <h3>Result</h3>
         </div>
 
+        <script src="./game.js"></script>
         <script src="./script.js"></script>
     </body>
 </html>

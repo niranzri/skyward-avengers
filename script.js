@@ -1,9 +1,26 @@
-const images = [];
+const images = [
+    {name: 'stratus', img: '1-stratus.jpg', status: 'inactive'},
+    {name: 'stratocumulus', img: '2-stratocumulus.jpg', status: 'inactive'},
+    {name: 'cumulus', img: '3-cumulus.jpg', status: 'inactive'},
+    {name: 'nimbostratus', img: '4-nimbostratus.jpg', status: 'inactive'},
+    {name: 'altostratus', img: '5-altostratus.jpg', status: 'inactive'},
+    {name: 'altocumulus', img: '6-altocumulus.jpg', status: 'inactive'},
+    {name: 'cirrostratus', img: '7-cirrostratus.jpg', status: 'inactive'},
+    {name: 'cirrocumulus', img: '8-cirrocumulus.jpg', status: 'inactive'},
+    {name: 'cirrus', img: '9-cirrus.jpg', status: 'inactive'},
+    {name: 'cumulonimbus', img: '10-cumulonimbus.jpg', status: 'inactive'},
+];
 
-const gameScreen = document.querySelector(".game-screen");
-const mainScreen = document.querySelector(".main-screen");
+// Create instance of class CloudGame
+
+const cloudGame = new CloudGame(images);
+cloudGame.shuffleImages(cloudGame.cards);
+
+// First and second screens
+const gameScreen = document.querySelector(".js-game-screen");
+const mainScreen = document.querySelector(".js-main-screen");
 let topContainer = document.querySelector(".top-container"); 
-let mainButton = document.querySelector(".main-button");
+let mainButton = document.querySelector(".cloud-button");
 
 function firstClick () {
     topContainer.innerHTML = `<h1>Do you want to become a skyward avenger?</h1>
@@ -34,7 +51,7 @@ function firstClick () {
 
 function secondClick () {
     gameScreen.style.display = 'none';
-    mainScreen.style.display = 'flex';
+    mainScreen.style.display = 'block';
     mainButton.removeEventListener('click', secondClick);
 }
 
