@@ -11,10 +11,7 @@ const images = [
     {name: 'cumulonimbus', img: '10-cumulonimbus.jpg'},
 ];
 
-// Create instance of class CloudGame
 const cloudGame = new CloudGame(images);
-
-// Randomize images
 const randomizedImages = cloudGame.randomizeImages();
 
 // DOM elements -  Start & Instructions screens 
@@ -96,7 +93,7 @@ function clickFactoryButton () {
     }
 };
 
-// Check whether the correct game button has been clicked
+// Checks whether the correct game button has been clicked
 function clickHeightButton (event) {
     let buttonId = event.target.id;
     let isCorrect = cloudGame.checkIfCorrect(buttonId, imageName);
@@ -137,7 +134,6 @@ function showEndScreen () {
         <br>
         <p> <span> Skyward master: </span> Brilliant! You're ready to join the Avengers.</p>`
     }
-    // cloudButton.innerHTML = "RE-START";
 }
 
 reStartButton.addEventListener("click", function () {

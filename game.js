@@ -23,7 +23,7 @@ class CloudGame {
         } 
     }
 
-    // checks if answer correct & updates score
+    // checks if answer is correct & updates score
     checkIfCorrect(buttonId, imageName) {
         if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
             && buttonId === 'js-low-button') || 
@@ -56,6 +56,7 @@ class CloudGame {
         return this.array[this.currentImageIndex].name;
     }
 
+    // checks whether we've looped over the whole array to signal the end of the game 
     gameOver() {
         if (this.currentImageIndex >= this.array.length) {
             return true;
