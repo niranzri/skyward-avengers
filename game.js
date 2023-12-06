@@ -24,9 +24,9 @@ class CloudGame {
     }
 
     // checks if answer correct & updates score
-    checkIfCorrect(buttonId, imageName, guessedImage, playedImage) {
-        this.numberImagesPlayed += 1;
-        playedImage.textContent = this.numberImagesPlayed;
+    checkIfCorrect(buttonId, imageName) {
+       // this.numberImagesPlayed += 1;
+        //counterPlayed.textContent = this.numberImagesPlayed;
         if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
             && buttonId === 'low-button') || 
             (['altostratus', 'altocumulus', 'cumulonimbus'].includes(imageName)
@@ -34,8 +34,8 @@ class CloudGame {
             (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(imageName)
             && buttonId === 'high-button')) 
         {
-            this.imagesGuessed += 1;
-            guessedImage.textContent = this.numberImagesGuessed;
+            //this.imagesGuessed += 1;
+            //counterGuessed.html = this.numberImagesGuessed;
             return true;
         } else {
             return false;

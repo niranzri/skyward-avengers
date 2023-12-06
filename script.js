@@ -1,14 +1,14 @@
 const images = [
-    {name: 'stratus', img: '1-stratus.jpg', status: 'inactive'},
-    {name: 'stratocumulus', img: '2-stratocumulus.jpg', status: 'inactive'},
-    {name: 'cumulus', img: '3-cumulus.jpg', status: 'inactive'},
-    {name: 'nimbostratus', img: '4-nimbostratus.jpg', status: 'inactive'},
-    {name: 'altostratus', img: '5-altostratus.jpg', status: 'inactive'},
-    {name: 'altocumulus', img: '6-altocumulus.jpg', status: 'inactive'},
-    {name: 'cirrostratus', img: '7-cirrostratus.jpg', status: 'inactive'},
-    {name: 'cirrocumulus', img: '8-cirrocumulus.jpg', status: 'inactive'},
-    {name: 'cirrus', img: '9-cirrus.jpg', status: 'inactive'},
-    {name: 'cumulonimbus', img: '10-cumulonimbus.jpg', status: 'inactive'},
+    {name: 'stratus', img: '1-stratus.jpg'},
+    {name: 'stratocumulus', img: '2-stratocumulus.jpg'},
+    {name: 'cumulus', img: '3-cumulus.jpg'},
+    {name: 'nimbostratus', img: '4-nimbostratus.jpg'},
+    {name: 'altostratus', img: '5-altostratus.jpg'},
+    {name: 'altocumulus', img: '6-altocumulus.jpg'},
+    {name: 'cirrostratus', img: '7-cirrostratus.jpg'},
+    {name: 'cirrocumulus', img: '8-cirrocumulus.jpg'},
+    {name: 'cirrus', img: '9-cirrus.jpg'},
+    {name: 'cumulonimbus', img: '10-cumulonimbus.jpg'},
 ];
 
 // Create instance of class CloudGame
@@ -26,8 +26,9 @@ const cloudButton = document.querySelector(".cloud-button");
 const mainScreen = document.querySelector(".js-main-screen");
 const factoryButton = document.querySelector(".factory-button");
 const gameImage = document.querySelector(".game-image");
-const guessedImage = document.querySelector(".js-images-guessed");
-const playedImage = document.querySelector(".js-images-played");
+const gameText =  document.querySelector(".game-text");
+const counterGuessed = document.querySelector("#js-images-guessed");
+const counterPlayed = document.querySelector("#js-images-played");
 const heightButtons = document.querySelectorAll(".game-button");
 
 // Move to instructions screen (click event)
@@ -67,24 +68,35 @@ function secondClick () {
 
 cloudButton.addEventListener('click', firstClick);
 
-// Display cloud images + return button id +
-// check if cliked button is correct (method called from returnButtonId)
-const clickFactoryButton = () => {
-    let imageName = cloudGame.returnName(randomizedImages);
+
+let imageName = "";
+
+// Display cloud images & text 
+function clickFactoryButton () {
+    imageName = cloudGame.returnName(randomizedImages);
     let imageSrc = cloudGame.displayNextImage(randomizedImages);
     console.log(imageName);
     if (imageSrc) {
         gameImage.src = imageSrc;
-        heightButtons.forEach((button)=> {
-            button.addEventListener('click', (event) => {
-                let buttonId = event.target.id;
-                cloudGame.checkIfCorrect(buttonId, imageName);
-            })
-        })
+        gameText.innerHTML = imageName;
     } else {
         factoryButton.removeEventListener('click', clickFactoryButton)
     }
 };
+
+// Check whether the correct game button has been clicked
+heightButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        console.log("click!")
+        let buttonId = event.target.id;
+        console.log("clock")
+        let isCorrect = cloudGame.checkIfCorrect(buttonId, imageName);
+        if (isCorrect){
+            counterGuessed.innerHTML = parseInt(counterGuessed.innerHTML) + 1;
+        }
+        counterPlayed.innerHTML = parseInt(counterPlayed.innerHTML) + 1;
+    })
+});
 
 factoryButton.addEventListener('click', clickFactoryButton);
 
