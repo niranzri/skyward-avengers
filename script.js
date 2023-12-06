@@ -17,16 +17,20 @@ const cloudGame = new CloudGame(images);
 // Randomize images
 const randomizedImages = cloudGame.randomizeImages();
 
-// Start & Instructions screens
+// DOM elements -  Start & Instructions screens 
 const gameScreen = document.querySelector(".js-game-screen");
 let topContainer = document.querySelector(".top-container"); 
 const cloudButton = document.querySelector(".cloud-button");
 
-// Game screen
+// DOM elements - Game screen
 const mainScreen = document.querySelector(".js-main-screen");
 const factoryButton = document.querySelector(".factory-button");
 const gameImage = document.querySelector(".game-image");
+const guessedImage = document.querySelector(".js-images-guessed");
+const playedImage = document.querySelector(".js-images-played");
+const heightButtons = document.querySelectorAll(".game-button");
 
+// Move to instructions screen (click event)
 function firstClick () {
     topContainer.innerHTML = `<h1>Do you want to become a skyward avenger?</h1>
     <br>
@@ -54,25 +58,34 @@ function firstClick () {
     cloudButton.addEventListener('click', secondClick);
 };
 
+// Move to game screen (click event)
 function secondClick () {
     gameScreen.style.display = 'none';
     mainScreen.style.display = 'block';
     cloudButton.removeEventListener('click', secondClick);
 }
 
-
 cloudButton.addEventListener('click', firstClick);
 
-let currentImageIndex = 0;
-factoryButton.addEventListener('click', () => {
-    if (currentImageIndex >= randomizedImages.length) {
-        currentImageIndex = 0;
-        return; // remove event listener and move to final screen
-    } 
-    gameImage.src = `images/${images[currentImageIndex].img}`;
-    currentImageIndex += 1;
-    });
+// Display cloud images + return button id +
+// check if cliked button is correct (method called from returnButtonId)
+const clickFactoryButton = () => {
+    let imageName = cloudGame.returnName(randomizedImages);
+    let imageSrc = cloudGame.displayNextImage(randomizedImages);
+    console.log(imageName);
+    if (imageSrc) {
+        gameImage.src = imageSrc;
+        heightButtons.forEach((button)=> {
+            button.addEventListener('click', (event) => {
+                let buttonId = event.target.id;
+                cloudGame.checkIfCorrect(buttonId, imageName);
+            })
+        })
+    } else {
+        factoryButton.removeEventListener('click', clickFactoryButton)
+    }
+};
 
-
+factoryButton.addEventListener('click', clickFactoryButton);
 
 

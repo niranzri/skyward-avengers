@@ -162,7 +162,7 @@ h1 {
     position:relative;
     height: 80%;
     width: 25%;
-    background-image:url('images/cloudFactory.png');
+    background-image:url('images/cloud-factory-button.png');
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -183,7 +183,6 @@ h1 {
 }
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-
 
 @media(max-width:1024px) {
     .top-container {

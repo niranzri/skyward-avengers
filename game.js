@@ -1,8 +1,11 @@
 class CloudGame {
-    constructor(images) {
+    constructor(images, imageName, buttonId) {
         this.images = images;
-        this.imagesGuessed = 0;
-        this.imagesPlayed = 0;
+        this.imageName = imageName;
+        this.buttonId = buttonId;
+        this.numberImagesGuessed = 0;
+        this.numberImagesPlayed = 0;
+        this.currentImageIndex = 0;
     }
 
     // randomizes images at the beginning of the game
@@ -20,27 +23,46 @@ class CloudGame {
         } 
     }
 
-    // checks if answer correct & upadtes score
-    checkIfCorrect(buttonId, image) {
-        const guessedImage = document.querySelector(".js-images-guessed");
-        const playedImage = document.querySelector(".js-images-played");
-        this.imagesPlayed += 1;
-        playedImage.textContent = this.imagesPlayed;
-        if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(image.name) 
+    // checks if answer correct & updates score
+    checkIfCorrect(buttonId, imageName, guessedImage, playedImage) {
+        this.numberImagesPlayed += 1;
+        playedImage.textContent = this.numberImagesPlayed;
+        if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
             && buttonId === 'low-button') || 
-            (['altostratus', 'altocumulus', 'cumulonimbus'].includes(image.name)
+            (['altostratus', 'altocumulus', 'cumulonimbus'].includes(imageName)
             && buttonId === 'medium-button') || 
-            (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(image.name)
-            && buttonId === 'high-button')) {
+            (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(imageName)
+            && buttonId === 'high-button')) 
+        {
             this.imagesGuessed += 1;
-            guessedImage.textContent = this.imagesGuessed;
+            guessedImage.textContent = this.numberImagesGuessed;
             return true;
         } else {
             return false;
         }
     }
 
+    // displays next cloud image
+    displayNextImage (array) {
+        this.array = array;
+        if (this.currentImageIndex >= this.images.length) {
+            this.currentImageIndex = 0;
+            return; 
+        } 
+        let imageSrc = `images/${this.array[this.currentImageIndex].img}`;
+        this.currentImageIndex += 1;
+        return imageSrc;
+    };
+
+    // returns current image's name
+    returnName (array) {
+        this.array = array;
+        return this.array[this.currentImageIndex].name;
+    }
 }
+
+
+
 
 
 
