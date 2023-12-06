@@ -85,17 +85,26 @@ function clickFactoryButton () {
 };
 
 // Check whether the correct game button has been clicked
+
+function clickHeightButton (event) {
+    console.log("click!")
+    let buttonId = event.target.id;
+    console.log("clock")
+    let isCorrect = cloudGame.checkIfCorrect(buttonId, imageName);
+    if (isCorrect){
+        counterGuessed.innerHTML = parseInt(counterGuessed.innerHTML) + 1;
+    }
+    counterPlayed.innerHTML = parseInt(counterPlayed.innerHTML) + 1;
+    let gameOver = cloudGame.gameOver();
+    if (gameOver) {
+        heightButtons.forEach((button) => {
+            button.removeEventListener('click', clickHeightButton);
+        });
+    }
+}
+
 heightButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-        console.log("click!")
-        let buttonId = event.target.id;
-        console.log("clock")
-        let isCorrect = cloudGame.checkIfCorrect(buttonId, imageName);
-        if (isCorrect){
-            counterGuessed.innerHTML = parseInt(counterGuessed.innerHTML) + 1;
-        }
-        counterPlayed.innerHTML = parseInt(counterPlayed.innerHTML) + 1;
-    })
+    button.addEventListener('click', clickHeightButton);
 });
 
 factoryButton.addEventListener('click', clickFactoryButton);
