@@ -18,7 +18,7 @@ const cloudGame = new CloudGame(images);
 const randomizedImages = cloudGame.randomizeImages();
 
 // DOM elements -  Start & Instructions screens 
-const gameScreen = document.querySelector(".js-game-screen");
+const gameScreen = document.querySelector(".js-start-screen");
 let topContainer = document.querySelector(".top-container"); 
 const cloudButton = document.querySelector(".cloud-button");
 
@@ -32,7 +32,9 @@ const counterPlayed = document.querySelector("#js-images-played");
 const heightButtons = document.querySelectorAll(".game-button");
 
 // DOM elements - End screen
-const reStartButton = document.querySelector("#re-start-button");
+const endScreen = document.querySelector(".js-end-screen");
+let endContainer = document.querySelector(".top-container-end");
+const reStartButton = document.querySelector("#js-re-start-button");
 
 // Move to instructions screen (click event)
 function firstClick () {
@@ -120,22 +122,22 @@ factoryButton.addEventListener('click', clickFactoryButton);
 
 function showEndScreen () {
     mainScreen.style.display = 'none';
+    endScreen.style.display = 'flex';
     const score = parseInt(counterGuessed.innerHTML);
     if (score <= 4) {
-        topContainer.innerHTML = `<h1> Result </h1>
+        endContainer.innerHTML = `<h2> Result </h2>
         <br>
         <p> <span> Skyward novice: </span> You need to keep improving.</p>`
     } else if ((score >=5) && (score <= 8)) {
-        topContainer.innerHTML = `<h1> Result </h1>
+        endContainer.innerHTML = `<h2> Result </h2>
         <br>
         <p> <span> Skyward amateur: </span> You're on the right track, young padawan.</p>`
     } else if (score >= 9){
-        topContainer.innerHTML = `<h1> Result </h1>
+        endContainer.innerHTML = `<h2> Result </h2>
         <br>
         <p> <span> Skyward master: </span> Brilliant! You're ready to join the Avengers.</p>`
     }
-    gameScreen.style.display = 'flex';
-    cloudButton.innerHTML = "RE-START";
+    // cloudButton.innerHTML = "RE-START";
 }
 
 reStartButton.addEventListener("click", function () {

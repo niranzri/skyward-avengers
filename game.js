@@ -26,11 +26,11 @@ class CloudGame {
     // checks if answer correct & updates score
     checkIfCorrect(buttonId, imageName) {
         if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
-            && buttonId === 'low-button') || 
+            && buttonId === 'js-low-button') || 
             (['altostratus', 'altocumulus', 'cumulonimbus'].includes(imageName)
-            && buttonId === 'medium-button') || 
+            && buttonId === 'js-medium-button') || 
             (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(imageName)
-            && buttonId === 'high-button')) 
+            && buttonId === 'js-high-button')) 
         {
             return true;
         } else {
