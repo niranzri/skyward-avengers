@@ -57,7 +57,7 @@ class CloudGame {
     }
 
     gameOver() {
-        if (this.currentImageIndex >= 10) {
+        if (this.currentImageIndex >= this.array.length) {
             return true;
         }
     }

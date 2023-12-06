@@ -31,6 +31,9 @@ const counterGuessed = document.querySelector("#js-images-guessed");
 const counterPlayed = document.querySelector("#js-images-played");
 const heightButtons = document.querySelectorAll(".game-button");
 
+// DOM elements - End screen
+const reStartButton = document.querySelector("#re-start-button");
+
 // Move to instructions screen (click event)
 function firstClick () {
     topContainer.innerHTML = `<h1>Do you want to become a skyward avenger?</h1>
@@ -70,26 +73,30 @@ cloudButton.addEventListener('click', firstClick);
 
 
 let imageName = "";
+let isHeightButtonClicked = false;
 
 // Display cloud images & text 
 function clickFactoryButton () {
-    imageName = cloudGame.returnName(randomizedImages);
-    let imageSrc = cloudGame.displayNextImage(randomizedImages);
-    console.log(imageName);
-    if (imageSrc) {
-        gameImage.src = imageSrc;
-        gameText.innerHTML = imageName;
-    } else {
-        factoryButton.removeEventListener('click', clickFactoryButton)
+    if (isHeightButtonClicked || imageName === "") {
+        imageName = cloudGame.returnName(randomizedImages);
+        let imageSrc = cloudGame.displayNextImage(randomizedImages);
+        heightButtons.forEach((button) => { // adds event listeners again once a new image is displayed
+            button.addEventListener('click', clickHeightButton);
+        });
+        //console.log(imageName);
+        if (imageSrc) {
+            gameImage.src = imageSrc;
+            gameText.innerHTML = imageName;
+        } else {
+            factoryButton.removeEventListener('click', clickFactoryButton)
+        }
+        isHeightButtonClicked = false;
     }
 };
 
 // Check whether the correct game button has been clicked
-
 function clickHeightButton (event) {
-    console.log("click!")
     let buttonId = event.target.id;
-    console.log("clock")
     let isCorrect = cloudGame.checkIfCorrect(buttonId, imageName);
     if (isCorrect){
         counterGuessed.innerHTML = parseInt(counterGuessed.innerHTML) + 1;
@@ -97,10 +104,12 @@ function clickHeightButton (event) {
     counterPlayed.innerHTML = parseInt(counterPlayed.innerHTML) + 1;
     let gameOver = cloudGame.gameOver();
     if (gameOver) {
-        heightButtons.forEach((button) => {
-            button.removeEventListener('click', clickHeightButton);
-        });
+        factoryButton.addEventListener('click', showEndScreen)
     }
+    heightButtons.forEach((button) => {
+        button.removeEventListener('click', clickHeightButton);
+    });
+    isHeightButtonClicked = true;
 }
 
 heightButtons.forEach((button) => {
@@ -108,5 +117,31 @@ heightButtons.forEach((button) => {
 });
 
 factoryButton.addEventListener('click', clickFactoryButton);
+
+function showEndScreen () {
+    mainScreen.style.display = 'none';
+    const score = parseInt(counterGuessed.innerHTML);
+    if (score <= 4) {
+        topContainer.innerHTML = `<h1> Result </h1>
+        <br>
+        <p> <span> Skyward novice: </span> You need to keep improving.</p>`
+    } else if ((score >=5) && (score <= 8)) {
+        topContainer.innerHTML = `<h1> Result </h1>
+        <br>
+        <p> <span> Skyward amateur: </span> You're on the right track, young padawan.</p>`
+    } else if (score >= 9){
+        topContainer.innerHTML = `<h1> Result </h1>
+        <br>
+        <p> <span> Skyward master: </span> Brilliant! You're ready to join the Avengers.</p>`
+    }
+    gameScreen.style.display = 'flex';
+    cloudButton.innerHTML = "RE-START";
+}
+
+reStartButton.addEventListener("click", function () {
+    location.reload(); //whenever you click on re-start button you re-load the page
+});
+
+
 
 
