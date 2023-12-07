@@ -42,10 +42,14 @@ class CloudGame {
     // displays alert message with bonus info if 'nimbostratus' or 'cumulonimbus' images are displayed. 
     displayAlert(imageName) {
         if (imageName === 'nimbostratus') {
-            alert("Bonus fact: nimbostratus are considered both low and medium-level clouds: they usually form in the middle layer and have bases that can extend into the lower layer.")
+            setTimeout(() => {
+                alert("Bonus fact: nimbostratus are considered both low and medium-level clouds: they usually form in the middle layer and have bases that can extend into the lower layer.")
+            }, 400);
         }
         if (imageName === 'cumulonimbus') {
-            alert("Bonus fact: cumulonimbus are multi-level clouds, because they span the low, middle, and high layers.")
+            setTimeout(() => {
+                alert("Bonus fact: cumulonimbus are multi-level clouds, because they span the low, middle, and high layers.")
+            }, 400);
         }
     }
 

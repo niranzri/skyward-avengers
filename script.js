@@ -136,9 +136,9 @@ factoryButton.addEventListener('click', clickFactoryButton);
 
 // Shows end screen and updates text displayed according to score
 function showEndScreen () {
+    let audio = new Audio("finalScreen.wav");
     mainScreen.style.display = 'none';
     endScreen.style.display = 'flex';
-    let audio = new Audio("finalScreen.wav");
     audio.play();
     audio.volume = 0.8;
     const score = parseInt(counterGuessed.innerHTML);
