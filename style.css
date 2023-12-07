@@ -127,8 +127,13 @@ h1, h2 {
     font-size: 1.2rem;
     font-family: 'Saira Semi Condensed', sans-serif; 
     filter:drop-shadow(2px 2px 5px black);
-    /*filter:drop-shadow(2px 2px 5px #516594);*/
 }
+
+.game-button:hover {
+    cursor: pointer;
+    background-color: #a5b9e8;
+}
+/*#516594*/
 
 .row-2 {
     height: 45vh;

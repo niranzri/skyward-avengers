@@ -40,7 +40,8 @@ function firstClick () {
     <p> In the following game, you will learn to identify 
     the types of clouds you find at different height levels.</p>
     <br>
-    <p> Why is this an important skill for an avenger?
+    <p> Why is this an important skill for an avenger?</p>
+    <br>
     <ul>
         <li> <span> Visibility:</span> Lower clouds can reduce visibility, 
         which might affect your ability to spot danger or people in need from a distance.</li>
@@ -51,7 +52,6 @@ function firstClick () {
         <li><span> Temperature & Pressure:</span> If you are sensitive to these factors, 
         knowing the cloud level is crucial for your well-being.</li>
     </ul>
-    </p>
     <br>
     <p>You will be shown 10 pictures of clouds, one at a time. To earn points, click the correct answer. <em>May the force be with you!</em></p>`;
     topContainer.classList.remove("top-container");
