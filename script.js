@@ -32,6 +32,7 @@ const cloudButton = document.querySelector(".cloud-button");
 // DOM elements - Game screen
 const mainScreen = document.querySelector(".js-main-screen");
 const factoryButton = document.querySelector(".factory-button");
+const factoryButtonText = document.querySelector("#factory-button");
 const gameImage = document.querySelector(".game-image");
 const gameText =  document.querySelector(".game-text");
 const counterGuessed = document.querySelector("#js-images-guessed");
@@ -115,6 +116,9 @@ function clickHeightButton (event) {
         counterGuessed.innerHTML = parseInt(counterGuessed.innerHTML) + 1;
     }
     counterPlayed.innerHTML = parseInt(counterPlayed.innerHTML) + 1;
+    if (parseInt(counterPlayed.innerHTML) == 10) {
+        factoryButtonText.innerHTML = `NEXT`;
+    }
     let gameOver = cloudGame.gameOver();
     // adds 'click' to factory button to move to final screen once game is over
     if (gameOver) {
