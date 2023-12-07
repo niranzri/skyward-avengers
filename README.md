@@ -46,13 +46,13 @@ Skyward Avengers is an Avengers-themed educational game where players have to cl
 
 ### game.js
 CloudGame()
-    - this.images;
-    - this.imageName;
-    - this.imageText;
-    - this.buttonId;
-    - this.numberImagesPlayed;
-    - this.numberImagesGuessed;
-    - this.currentImageIndex;
+  - this.images;
+  - this.imageName;
+  - this.imageText;
+  - this.buttonId;
+  - this.numberImagesPlayed;
+  - this.numberImagesGuessed;
+  - this.currentImageIndex;
 - randomizeImages();
 - checkIfCorrect();
 - displayAlert();
