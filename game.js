@@ -4,8 +4,8 @@ class CloudGame {
         this.imageName = imageName;
         this.imageText = imageText;
         this.buttonId = buttonId;
-        this.numberImagesGuessed = 0;
         this.numberImagesPlayed = 0;
+        this.numberImagesGuessed = 0;
         this.currentImageIndex = 0;
     }
 
