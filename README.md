@@ -24,6 +24,7 @@ Skyward Avengers is an Avengers-themed educational game where players have to cl
 ## Backlog
 - Extending the current number of images.
 - Incorporating a 'hint' option, so that descriptions are only displayed when the player needs them. The scoring system would therefore need to be adjusted.
+- Incorporating a 'show me the correct answer' option. 
 - Replacing the current click events on the game buttons by drag-and-drop events. 
 
 

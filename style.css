@@ -387,7 +387,7 @@ h2 {
         margin-top: 5%;
     }
     
-    .top-container-end p span {
+    .top-container-end > p > span {
         font-weight: bold;
         color: #0944cb;
     }
