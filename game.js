@@ -28,7 +28,7 @@ class CloudGame {
     checkIfCorrect(buttonId, imageName) {
         if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
             && buttonId === 'js-low-button') || 
-            (['altostratus', 'altocumulus', 'cumulonimbus'].includes(imageName)
+            (['altostratus', 'altocumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName)
             && buttonId === 'js-medium-button') || 
             (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(imageName)
             && buttonId === 'js-high-button')) 
@@ -36,6 +36,16 @@ class CloudGame {
             return true;
         } else {
             return false;
+        }
+    }
+
+    // displays alert message with bonus info if 'nimbostratus' or 'cumulonimbus' images are displayed. 
+    displayAlert(imageName) {
+        if (imageName === 'nimbostratus') {
+            alert("Bonus fact: nimbostratus are considered both low and medium-level clouds: they usually form in the middle layer and have bases that can extend into the lower layer.")
+        }
+        if (imageName === 'cumulonimbus') {
+            alert("Bonus fact: cumulonimbus are multi-level clouds, because they span the low, middle, and high layers.")
         }
     }
 
@@ -57,6 +67,7 @@ class CloudGame {
         return this.array[this.currentImageIndex].name;
     }
 
+    // returns current image's description
     returnText (array) {
         this.array = array;
         return this.array[this.currentImageIndex].text;

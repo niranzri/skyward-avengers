@@ -74,9 +74,14 @@ body {
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
-h1, h2, h3 {
+h1, h3 {
     font-family: 'Big Shoulders Stencil Display', sans-serif;
     font-size: 3.5rem;
+}
+
+h2 {
+    font-family: 'Big Shoulders Stencil Display', sans-serif;
+    font-size: 2.5rem;
 }
 
 .game-instructions {
@@ -103,7 +108,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items:center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: 'Big Shoulders Stencil Display', sans-serif;
 }
 
@@ -151,7 +156,8 @@ h1, h2, h3 {
 .game-text{
     position: relative;
     width: 40%;
-    padding: 5%;
+    padding: 0 5% 5% 5%;
+    text-align:justify;
 }
 
 .row-3 {
@@ -197,9 +203,9 @@ h1, h2, h3 {
     height: 70vh;
 }
 
-.top-container-end > p {
+.top-container-end p {
     line-height: 2;
-    margin-top: 5%;
+    margin-top: 0% 10%;
 }
 
 .top-container-end p span {
@@ -212,8 +218,12 @@ h1, h2, h3 {
 
 @media(max-width:1024px) {
 
-    h1 {
+    h1, h2 {
         font-size: 2rem;
+    }
+
+    h2 {
+        text-align:center;
     }
 
     .top-container {
@@ -235,6 +245,10 @@ h1, h2, h3 {
         font-size: 1rem;
     }
 
+    .row-0 {
+        font-size: 2rem;
+    }
+
     .row-1 {
         flex-direction:column-reverse;
         height: 30vh;
@@ -251,6 +265,7 @@ h1, h2, h3 {
     .row-2 {
         height: 35vh;
         min-height: 35vh;
+        flex-direction: column;
     }
 
     .factory-button span {
@@ -265,10 +280,10 @@ h1, h2, h3 {
         min-height: 150px;
     }
 
-    .game-text {
+    .game-text p {
         display: none;
     }
-
+    
     .top-container-end {
         font-size: 1.2rem;
         width: 100vw;
