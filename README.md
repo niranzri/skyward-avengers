@@ -1,9 +1,9 @@
-# skyward-avengers
+# Skyward Avengers
 
 [Click here to see deployed game](http://github.com)
 
 ## Description
-Brief description of the project
+Skyward Avengers is an Avengers-themed educational game where players have to classify clouds based on their height (low-level, medium-level, or high-level). The game is not just a classification game but also a quiz: the player gets awarded points for correct answers. The score is accompanied by a 
 
 
 ## MVP
