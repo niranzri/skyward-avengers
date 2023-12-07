@@ -138,6 +138,9 @@ factoryButton.addEventListener('click', clickFactoryButton);
 function showEndScreen () {
     mainScreen.style.display = 'none';
     endScreen.style.display = 'flex';
+    let audio = new Audio("finalScreen.wav");
+    audio.play();
+    audio.volume = 0.8;
     const score = parseInt(counterGuessed.innerHTML);
     if (score <= 4) {
         endContainer.innerHTML = `<h3> Result </h3>
