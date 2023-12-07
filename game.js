@@ -1,7 +1,8 @@
 class CloudGame {
-    constructor(images, imageName, buttonId) {
+    constructor(images, imageName, imageText, buttonId) {
         this.images = images;
         this.imageName = imageName;
+        this.imageText = imageText;
         this.buttonId = buttonId;
         this.numberImagesGuessed = 0;
         this.numberImagesPlayed = 0;
@@ -54,6 +55,11 @@ class CloudGame {
     returnName (array) {
         this.array = array;
         return this.array[this.currentImageIndex].name;
+    }
+
+    returnText (array) {
+        this.array = array;
+        return this.array[this.currentImageIndex].text;
     }
 
     // checks whether we've looped over the whole array to signal the end of the game 
