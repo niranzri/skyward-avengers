@@ -133,7 +133,6 @@ h1, h2 {
     cursor: pointer;
     background-color: #a5b9e8;
 }
-/*#516594*/
 
 .row-2 {
     height: 45vh;
@@ -183,7 +182,7 @@ h1, h2 {
 .factory-button span {
     font-size: 1.5rem;
     line-height: 1;
-    margin-top: 100px;
+    margin-bottom: -100px;
 }
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
@@ -206,24 +205,24 @@ h1, h2 {
 .top-container-end p span {
     font-weight: bold;
     color: #0944cb;
-    /*color: rgba(228, 0, 88, 1);*/
 }
-/*
-$imperial-red: rgba(252, 76, 80, 1);
-$sunset: rgba(254, 198, 120, 1);
-$raspberry-2: rgba(226, 0, 87, 1);
-$light-blue: rgba(179, 209, 214, 1);*/
 
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
 @media(max-width:1024px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
     .top-container {
         font-size: 4rem;
     }
 
     .cloud-button {
         font-size: 1.5rem;
+        margin-bottom: -10px;
     }
 
     #cloud-img {
@@ -246,6 +245,7 @@ $light-blue: rgba(179, 209, 214, 1);*/
         width: 300px;
         font-size: 0.9rem;
         height: 25%;
+        line-height: 1.5;
     }
 
     .row-2 {
@@ -255,7 +255,7 @@ $light-blue: rgba(179, 209, 214, 1);*/
 
     .factory-button span {
         font-size:1.2rem;
-        margin-top: 60px;
+        margin-bottom: -70px;
     }
 
     .game-image {
@@ -266,6 +266,22 @@ $light-blue: rgba(179, 209, 214, 1);*/
     }
 
     .game-text {
-        display:none;
+        display: none;
+    }
+
+    .top-container-end {
+        font-size: 1.2rem;
+        width: 100vw;
+        height: 70vh;
+    }
+    
+    .top-container-end > p {
+        line-height: 2;
+        margin-top: 5%;
+    }
+    
+    .top-container-end p span {
+        font-weight: bold;
+        color: #0944cb;
     }
 }
