@@ -89,14 +89,14 @@ function clickFactoryButton () {
         imageName = cloudGame.returnName(randomizedImages);
         imageText = cloudGame.returnText(randomizedImages);
         let imageSrc = cloudGame.displayNextImage(randomizedImages);
-        // adds 'click' to all game buttons again after new image displayed
+        // adds 'click' to all game buttons again after image is displayed
         heightButtons.forEach((button) => { 
             button.addEventListener('click', clickHeightButton);
         });
         //console.log(imageName);
         if (imageSrc) {
             gameImage.src = imageSrc;
-            gameText.innerHTML = `<h2>${imageName}</h2> 
+            gameText.innerHTML = `<h2>${imageName} clouds</h2> 
             <p>${imageText}</p>`;
         // removes 'click' from factory button once a click event has been triggered
         } else {
@@ -127,16 +127,12 @@ function clickHeightButton (event) {
     isHeightButtonClicked = true;
 }
 
-// Adds event listener 'click' to game buttons
-heightButtons.forEach((button) => {
-    button.addEventListener('click', clickHeightButton);
-});
-
+// Adds 'click' to cloud factory button
 factoryButton.addEventListener('click', clickFactoryButton);
 
 // Shows end screen and updates text displayed according to score
 function showEndScreen () {
-    let audio = new Audio("finalScreen.wav");
+    let audio = new Audio("audio/finalScreen.wav");
     mainScreen.style.display = 'none';
     endScreen.style.display = 'flex';
     audio.play();

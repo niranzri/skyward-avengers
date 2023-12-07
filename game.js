@@ -33,8 +33,12 @@ class CloudGame {
             (['cirrostratus', 'cirrocumulus', 'cirrus', 'cumulonimbus'].includes(imageName)
             && buttonId === 'js-high-button')) 
         {
+            let correct = new Audio("audio/correctAnswer.mp3");
+            correct.play()
             return true;
         } else {
+            let incorrect = new Audio("audio/incorrectAnswer.mp3");
+            incorrect.play()
             return false;
         }
     }
@@ -44,12 +48,12 @@ class CloudGame {
         if (imageName === 'nimbostratus') {
             setTimeout(() => {
                 alert("Bonus fact: nimbostratus are considered both low and medium-level clouds: they usually form in the middle layer and have bases that can extend into the lower layer.")
-            }, 400);
+            }, 500);
         }
         if (imageName === 'cumulonimbus') {
             setTimeout(() => {
-                alert("Bonus fact: cumulonimbus are multi-level clouds, because they span the low, middle, and high layers.")
-            }, 400);
+                alert("Bonus fact: cumulonimbus are multi-level clouds because they span the low, middle, and high layers.")
+            }, 500);
         }
     }
 
