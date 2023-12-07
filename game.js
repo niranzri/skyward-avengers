@@ -9,7 +9,7 @@ class CloudGame {
         this.currentImageIndex = 0;
     }
 
-    // randomizes images at the beginning of the game
+    // Randomizes images at the beginning of the game
     randomizeImages() {
         if (!this.images){
         return undefined;
@@ -24,7 +24,7 @@ class CloudGame {
         } 
     }
 
-    // checks if answer is correct & updates score
+    // Checks if answer is correct & updates score
     checkIfCorrect(buttonId, imageName) {
         if ((['stratus', 'stratocumulus', 'cumulus', 'nimbostratus', 'cumulonimbus'].includes(imageName) 
             && buttonId === 'js-low-button') || 
@@ -43,7 +43,7 @@ class CloudGame {
         }
     }
 
-    // displays alert message with bonus info if 'nimbostratus' or 'cumulonimbus' images are displayed. 
+    // Displays alert message with bonus info if 'nimbostratus' or 'cumulonimbus' images are displayed. 
     displayAlert(imageName) {
         if (imageName === 'nimbostratus') {
             setTimeout(() => {
@@ -57,7 +57,7 @@ class CloudGame {
         }
     }
 
-    // displays next cloud image
+    // Displays next cloud image
     displayNextImage (array) {
         this.array = array;
         if (this.currentImageIndex >= this.images.length) {
@@ -69,19 +69,19 @@ class CloudGame {
         return imageSrc;
     };
 
-    // returns current image's name
+    // Returns current image's name
     returnName (array) {
         this.array = array;
         return this.array[this.currentImageIndex].name;
     }
 
-    // returns current image's description
+    // Returns current image's description
     returnText (array) {
         this.array = array;
         return this.array[this.currentImageIndex].text;
     }
 
-    // checks whether we've looped over the whole array to signal the end of the game 
+    // Checks whether we've looped over the whole array to signal the end of the game 
     gameOver() {
         if (this.currentImageIndex >= this.array.length) {
             return true;

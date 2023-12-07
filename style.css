@@ -216,14 +216,15 @@ h2 {
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 
-@media(max-width:1024px) {
+@media(max-width:1024px) and (min-height:575px){
 
     h1, h2 {
         font-size: 2rem;
     }
 
     h2 {
-        text-align:center;
+        margin-top: 10px;
+        text-align: center;
     }
 
     .top-container {
@@ -236,8 +237,8 @@ h2 {
     }
 
     #cloud-img {
-        position:absolute;
-        height:100px;
+        position: absolute;
+        height: 100px;
         margin: 15px 30px 0 0;
     }
 
@@ -250,15 +251,16 @@ h2 {
     }
 
     .row-1 {
-        flex-direction:column-reverse;
+        flex-direction: column-reverse;
         height: 30vh;
+        margin-top: 10px;
     }
 
     .game-button {
         padding: 0px;
         width: 300px;
         font-size: 0.9rem;
-        height: 25%;
+        height: 50px;
         line-height: 1.5;
     }
 
@@ -266,17 +268,17 @@ h2 {
         height: 35vh;
         min-height: 35vh;
         flex-direction: column;
+        padding-top: 30px;
+        margin-bottom: -10px;
     }
 
     .factory-button span {
-        font-size:1.2rem;
+        font-size: 1.2rem;
         margin-bottom: -80px;
     }
 
     .game-image {
-        margin:0;
-        height: 70%;
-        min-width: 200px;
+        margin: 0;
         min-height: 150px;
     }
 
