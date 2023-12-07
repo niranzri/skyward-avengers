@@ -96,7 +96,8 @@ function clickFactoryButton () {
         //console.log(imageName);
         if (imageSrc) {
             gameImage.src = imageSrc;
-            gameText.innerHTML = `${imageName}: ${imageText}`;
+            gameText.innerHTML = `<h2>${imageName}:</h2> 
+            <p>${imageText}</p>`;
         // removes 'click' from factory button once a click event has been triggered
         } else {
             factoryButton.removeEventListener('click', clickFactoryButton)
@@ -138,17 +139,17 @@ function showEndScreen () {
     endScreen.style.display = 'flex';
     const score = parseInt(counterGuessed.innerHTML);
     if (score <= 4) {
-        endContainer.innerHTML = `<h2> Result </h2>
+        endContainer.innerHTML = `<h3> Result </h3>
         <br>
         <p> <span> Skyward novice: </span> You're at the starting line, much like Tony Stark in his early days. 
         It might seem daunting now, but remember, every expert was once a beginner. The sky's the limit! </p>`
     } else if ((score >=5) && (score <= 7)) {
-        endContainer.innerHTML = `<h2> Result </h2>
+        endContainer.innerHTML = `<h3> Result </h3>
         <br>
         <p> <span> Skyward amateur: </span> You've moved past the initial stage, just like Falcon when he took flight. 
         The sky is no longer a mystery but a canvas for you to explore. Continue the ascent skyward!” </p>`
     } else if (score >= 8){
-        endContainer.innerHTML = `<h2> Result </h2>
+        endContainer.innerHTML = `<h3> Result </h3>
         <br>
         <p> <span> Skyward master: </span> Impressive! Like Thor, you've mastered the skies. 
         With your cloud knowledge, you're ready to join the Avengers. Avengers, unite!” </p>`
