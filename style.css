@@ -199,7 +199,7 @@ h2 {
 .factory-button span {
     font-size: 1.5rem;
     line-height: 1;
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 /* End screen */
@@ -363,7 +363,7 @@ h2 {
     }
     
     .game-button {
-        padding: 0;
+        padding: 0px;
         width: 200px;
         font-size: 0.8rem;
         height: 40px;
