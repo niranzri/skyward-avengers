@@ -64,7 +64,7 @@ function clickStartButton () {
         knowing the cloud level is crucial for your well-being.</li>
     </ul>
     <br>
-    <p>You will be shown 10 pictures of clouds, one at a time. To earn points, click the correct answer. <em>May the force be with you!</em></p>`;
+    <p>You will be shown 10 images of clouds, one at a time. To earn points, click the correct answer. <em>May the force be with you!</em></p>`;
     topContainer.classList.remove("top-container");
     topContainer.classList.add("game-instructions");
     cloudButton.innerHTML = "NEXT";
