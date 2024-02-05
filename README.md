@@ -31,10 +31,7 @@ Skyward Avengers is an Avengers-themed educational game where players have to cl
 ## Techonologies Used
 - HTML
 - CSS
-- Javascript
-- DOM Manipulation
-- JS Classes
-- JS Audio()
+- Javascript: DOM Manipulation, JS Classes, JS Audio()
 
 
 ## Data structure
